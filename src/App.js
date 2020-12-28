@@ -1,20 +1,23 @@
 import React, { useState } from "react";
 import data from "./data";
 import SingleQuestion from "./Question";
+import { Container, Row, Col } from "react-bootstrap";
 
 function App() {
   const [questions, setQuestions] = useState(data);
   return (
-    <main>
-      <div className="container">
-        <h3>questions and answers about login</h3>
-        <section className="info">
+    <Container>
+      <Row>
+        <Col md={12}>
+          <h1 className="text-center">Questions and answers about login</h1>
+        </Col>
+        <Col md={12}>
           {questions.map((question) => {
             return <SingleQuestion key={question.id} {...question} />;
           })}
-        </section>
-      </div>
-    </main>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
