@@ -1,10 +1,14 @@
 import React from "react";
 
-const Question = () => {
+const Question = ({ title, info }) => {
   return (
-    <div>
-      <h2>component question</h2>
-    </div>
+    <article className="question">
+      <header>
+        <h4>{title}</h4>
+        <button className="btn">btn</button>
+      </header>
+      <p>{info}</p>
+    </article>
   );
 };
 
